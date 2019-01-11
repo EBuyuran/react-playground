@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <LabelledButton text={"Text"} label={"Button Label"} />
+        <LabelledButton text={"FORWARD MY REFS TO CONSOLE"} label={"Button Label"} />
       </div>
     );
   }

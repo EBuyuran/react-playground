@@ -1,10 +1,12 @@
 import React from "react";
 
-export default React.forwardRef((props, ref) => {
+export default React.forwardRef((props, refs) => {
   return (
     <div>
-      <button ref={ref[0]} onClick={props.callback}>{props.children}</button>
-      <div ref={ref[1]}>TEST DOM ELEMENT</div>
+      <button ref={refs.buttonRef} onClick={props.testRefs}>
+        {props.children}
+        </button>
+      <div ref={refs.testElementRef}>TEST ELEMENT</div>
     </div>
   )
 });

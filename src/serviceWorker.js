@@ -74,7 +74,7 @@ function registerValidSW(swUrl, config) {
                   'tabs for this page are closed. See http://bit.ly/CRA-PWA.'
               );
 
-              // Execute callback
+              // Execute testRefs
               if (config && config.onUpdate) {
                 config.onUpdate(registration);
               }
@@ -84,7 +84,7 @@ function registerValidSW(swUrl, config) {
               // "Content is cached for offline use." message.
               console.log('Content is cached for offline use.');
 
-              // Execute callback
+              // Execute testRefs
               if (config && config.onSuccess) {
                 config.onSuccess(registration);
               }

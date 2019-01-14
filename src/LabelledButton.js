@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Button from "./Button.js";
+import React from 'react';
+import Button from "./BasicButton.js";
 
-export default class LabelledButton extends Component {
+export default class LabelledButton extends React.Component {
   constructor(props) {
     super(props);
 

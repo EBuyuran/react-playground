@@ -2,16 +2,20 @@ import React from "react";
 
 export default function(WrappedComponent) {
   return class extends React.Component {
-    constructor(props) {
-      super(props)
+    componentDidMount() {
+      console.log("LogSomeStuff logs on 'componentDidMount' method.");
     }
 
-    componentDidMount() {
-      console.log("LogSomeStuff function has updated wrapped components 'componentDidMount' method.");
+    clickHandler(e) {
+      console.log("LogSomeStuff logs on click event.");
     }
 
     render() {
-      return <WrappedComponent {...this.props} />
+      return (
+        <div onClick={this.clickHandler}>
+          <WrappedComponent {...this.props} />
+        </div>
+      )
     }
   }
 }

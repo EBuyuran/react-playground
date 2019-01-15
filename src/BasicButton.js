@@ -1,13 +1,11 @@
 import React from "react";
 
 class BasicButton extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    console.log("BasicButton component is mounted.");
-  }
+  static defaultProps = {
+    children: "Default Button",
+    innerRefs: () => console.log("Waiting for refs from forwardRef component"),
+    testRefs: () => console.log("Basic button requires testRefs prop to demonstrate how refs work."),
+  };
 
   render() {
     return (

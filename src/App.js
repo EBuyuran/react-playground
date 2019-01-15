@@ -1,23 +1,20 @@
 import React from 'react';
+import BasicElement from './BasicElement.js';
 // import BasicButton from './BasicButton.js';
 import LabelledButton from './LabelledButton.js';
 import LogSomeStuff from './LogSomeStuff.js';
 import './App.css';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+// Higher Order Component Example.
+const LogStuff = LogSomeStuff(BasicElement);
 
-    this.abc = LogSomeStuff(<LabelledButton text={"FORWARD MY REFS TO CONSOLE"} label={"Button Label"} />);
-  }
-
+export default class extends React.Component {
   render() {
     return (
       <div className="App">
-        {<this.abc />}
+        <LogStuff background={"brown"} />
+        <LabelledButton /> {/* forwardRefs Example. */}
       </div>
-    );
+    )
   }
 }
-
-export default App;

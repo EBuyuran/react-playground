@@ -1,7 +1,12 @@
 import React from 'react';
 import Button from "./BasicButton.js";
 
-export default class LabelledButton extends React.Component {
+export default class extends React.Component {
+  static defaultProps = {
+    label: "Default Label",
+    buttonText: "Default Button"
+  };
+
   constructor(props) {
     super(props);
 
@@ -22,9 +27,9 @@ export default class LabelledButton extends React.Component {
       testElementRef: this.testElementRef,
     };
 
-    return <React.Fragment>
+    return <>
       <Button ref={refs} testRefs={this.testRefs.bind(this)}>{this.props.text}</Button>
       <div>{this.props.label}</div>
-    </React.Fragment>
+    </>
   }
 }

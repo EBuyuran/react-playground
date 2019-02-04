@@ -9,7 +9,7 @@ import "./App.css";
 // Higher Order Component Example.
 const LogStuff = LogSomeStuff(BasicElement);
 
-export default class extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,3 +29,5 @@ export default class extends React.Component {
     )
   }
 }
+
+export default App;

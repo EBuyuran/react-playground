@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "./BasicButton.js";
 
-export default class extends React.Component {
+class LabelledButton extends React.Component {
   static defaultProps = {
     label: "Default Label",
     buttonText: "Default Button"
@@ -33,3 +33,5 @@ export default class extends React.Component {
     </>
   }
 }
+
+export default LabelledButton;

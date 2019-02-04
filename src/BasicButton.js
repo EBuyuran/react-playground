@@ -8,12 +8,20 @@ class BasicButton extends React.Component {
   };
 
   render() {
+    const CustomComponent =
+      React.createElement(
+        "div",
+        {width: 50, height: 50, background: "blue"},
+        'Click Me'
+      );
+
     return (
       <div className={"button"}>
         <button ref={this.props.innerRefs.buttonRef} onClick={this.props.testRefs}>
           {this.props.children}
         </button>
         <div ref={this.props.innerRefs.testElementRef}>TEST ELEMENT</div>
+        {CustomComponent}
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class extends React.Component {
+class BasicElement extends React.Component {
   static defaultProps = {
     background: "black"
   };
@@ -11,3 +11,5 @@ export default class extends React.Component {
     )
   }
 }
+
+export default BasicElement;

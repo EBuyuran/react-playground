@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function(WrappedComponent) {
+function LogSomeStuff (WrappedComponent) {
   return class extends React.Component {
     componentDidMount() {
       console.log("LogSomeStuff logs on 'componentDidMount' method.");
@@ -19,3 +19,5 @@ export default function(WrappedComponent) {
     }
   }
 }
+
+export default LogSomeStuff;

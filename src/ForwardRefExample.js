@@ -3,8 +3,7 @@ import BasicButton from "./BasicButton.js";
 
 class ForwardRefExample extends React.Component {
   static defaultProps = {
-    label: "Default Label",
-    buttonText: "Default BasicButton"
+    label: "Console Refs to Log",
   };
 
   constructor(props) {

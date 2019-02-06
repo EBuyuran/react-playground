@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.error) {
       // If an error is caught on ErrorBoundary's children render methods,
       // We'll handle the error here.
-      return <h2>Error is caught and consoled. Rest of the APP still works in production mode.</h2>
+      return <h3>Error is caught and consoled. Rest of the APP still works in production mode.</h3>
     }
     // Otherwise, components will mount as intended.
     return this.props.children;

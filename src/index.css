@@ -16,3 +16,8 @@ code {
 .hidden {
   display: none;
 }
+
+button {
+  display: block;
+  margin: auto;
+}

@@ -23,7 +23,7 @@ class BuggyButton extends React.Component {
     }
 
     return (
-      <button style={{marginTop: 30}} onClick={this.throw}>{this.state.button_name}</button>
+      <button onClick={this.throw}>{this.state.button_name}</button>
     )
   }
 }

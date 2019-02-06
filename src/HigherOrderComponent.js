@@ -1,13 +1,14 @@
 import React from "react";
 
-function LogSomeStuff (WrappedComponent) {
+// Higher Order Component
+function HigherOrderComponent(WrappedComponent) {
   return class extends React.Component {
     componentDidMount() {
-      console.log("LogSomeStuff logs on 'componentDidMount' method.");
+      console.log("HigherOrderComponent logs 'componentDidMount'.");
     }
 
     clickHandler(e) {
-      console.log("LogSomeStuff logs on click event.");
+      console.log("HigherOrderComponent logs on click event.");
     }
 
     render() {
@@ -20,4 +21,4 @@ function LogSomeStuff (WrappedComponent) {
   }
 }
 
-export default LogSomeStuff;
+export default HigherOrderComponent;

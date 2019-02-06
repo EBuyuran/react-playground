@@ -4,26 +4,30 @@ class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: null
+      error: false // Will stay false until an error pops up.
     }
   }
 
   static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
+    // Updating the state to reflect the error on fallback UI.
     return {
       error: true
     }
   }
 
   componentDidCatch(error, errorInfo) {
+    // Error handling goes here.
     console.log(error);
     console.log(errorInfo);
   }
 
   render() {
     if (this.state.error) {
-      return <h2>Error is caught and consoled. Rest of the APP still works.</h2>
+      // If an error is caught on ErrorBoundary's children render methods,
+      // We'll handle the error here.
+      return <h2>Error is caught and consoled. Rest of the APP still works in production mode.</h2>
     }
+    // Otherwise, components will mount as intended.
     return this.props.children;
   }
 }

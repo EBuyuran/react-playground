@@ -1,13 +1,12 @@
 import React from "react";
 import ErrorBoundary from "./ErrorBoundary";
-import BasicElement from "./BasicElement";
+import SimpleBox from "./SimpleBox";
 import BuggyButton from "./BuggyButton";
-import LabelledButton from "./LabelledButton";
-import LogSomeStuff from "./LogSomeStuff";
+import ForwardRefExample from "./ForwardRefExample";
+import HigherOrderComponent from "./HigherOrderComponent";
 import "./App.css";
 
-// Higher Order Component Example.
-const LogStuff = LogSomeStuff(BasicElement);
+const WrappedInHigherOrderComponent = HigherOrderComponent(SimpleBox);
 
 class App extends React.Component {
   constructor(props) {
@@ -20,8 +19,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LogStuff background={"brown"} />
-        <LabelledButton /> {/* forwardRefs Example. */}
+        <h3>HigherOrderComponent Logic Implementation</h3>
+        <WrappedInHigherOrderComponent background={"brown"} />
+        <h3>React.forwardRef Logic Implementation</h3>
+        <ForwardRefExample /> {/* forwardRefs Example. */}
+        <h3>ErrorBoundary Implementation</h3>
         <ErrorBoundary>
           <BuggyButton /> {/* Error Handling */}
         </ErrorBoundary>

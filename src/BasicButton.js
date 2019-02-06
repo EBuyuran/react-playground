@@ -1,30 +1,20 @@
 import React from "react";
 
-class BasicButton extends React.Component {
-  static defaultProps = {
-    children: "Default Button",
-    innerRefs: () => console.log("Waiting for refs from forwardRef component"),
-    testRefs: () => console.log("Basic button requires testRefs prop to demonstrate how refs work."),
-  };
-
-  render() {
-    const CustomComponent =
-      React.createElement(
-        "div",
-        {width: 50, height: 50, background: "blue"},
-        'Click Me'
-      );
-
-    return (
-      <div className={"button"}>
-        <button ref={this.props.innerRefs.buttonRef} onClick={this.props.testRefs}>
-          {this.props.children}
-        </button>
-        <div ref={this.props.innerRefs.testElementRef}>TEST ELEMENT</div>
-        {CustomComponent}
-      </div>
-    )
-  }
+function RefReceiver(props) {
+  // We're creating two elements here just to demonstrate
+  // more than one ref can be passed to a component.
+  return (
+    <div className={"button"}>
+      <button ref={props.innerRefs.buttonRef} onClick={props.testRefs}>
+        {props.children}
+      </button>
+      <div ref={props.innerRefs.testElementRef}>PASSED REF DIV</div>
+    </div>
+  )
 }
 
-export default React.forwardRef((props, ref) => <BasicButton innerRefs={ref} {...props} />);
+// Note that we're not exporting RefReceiver itself.
+// We export React.forwardRef method which returns
+// an instance of RefReceiver with props and refs
+// passed to it.
+export default React.forwardRef((props, ref) => <RefReceiver innerRefs={ref} {...props} />);
